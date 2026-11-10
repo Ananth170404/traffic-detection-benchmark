@@ -1,0 +1,37 @@
+# Original 12 classes from Roboflow-100 "vehicles" (vehicles-q0x2v v2), in label-id order.
+original:
+  - big bus
+  - big truck
+  - bus-l-
+  - bus-s-
+  - car
+  - mid truck
+  - small bus
+  - small truck
+  - truck-l-
+  - truck-m-
+  - truck-s-
+  - truck-xl-
+
+# PROVISIONAL: confirm with notebooks/01_eda.ipynb before training merged models.
+merged:
+  names: [car, bus, truck]
+  mapping:
+    car: car
+    big bus: bus
+    bus-l-: bus
+    bus-s-: bus
+    small bus: bus
+    big truck: truck
+    mid truck: truck
+    small truck: truck
+    truck-l-: truck
+    truck-m-: truck
+    truck-s-: truck
+    truck-xl-: truck
+
+# Passenger car units used for flow in Phase 3/4.
+pcu:
+  car: 1.0
+  bus: 3.0
+  truck: 3.0
