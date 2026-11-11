@@ -13,7 +13,9 @@ original:
   - truck-s-
   - truck-xl-
 
-# PROVISIONAL: confirm with notebooks/01_eda.ipynb before training merged models.
+# Evidence in notebooks/01_eda.ipynb: the two naming schemes (big/mid/small vs -s-/-m-/-l-/-xl-)
+# co-occur in 1,096 images, describe the same size scale, and overlap heavily in box size;
+# several sub-classes have 0-31 test instances.
 merged:
   names: [car, bus, truck]
   mapping:

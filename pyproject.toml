@@ -29,7 +29,7 @@ train = [
     "roboflow",
 ]
 demo = ["gradio", "onnxruntime"]
-dev = ["pytest", "ruff"]
+dev = ["pytest", "ruff", "ipykernel", "nbconvert"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
