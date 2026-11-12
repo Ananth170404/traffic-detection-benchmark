@@ -16,6 +16,7 @@ dependencies = [
     "matplotlib",
     "pandas",
     "tqdm",
+    "pycocotools",
 ]
 
 [project.optional-dependencies]
@@ -23,7 +24,6 @@ train = [
     "torch",
     "torchvision",
     "ultralytics",
-    "pycocotools",
     "scikit-learn",
     "scikit-image",
     "roboflow",
