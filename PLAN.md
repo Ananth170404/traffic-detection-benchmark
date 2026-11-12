@@ -41,11 +41,14 @@ to GitHub Releases. All training scripts checkpoint and resume (12 h session lim
 | 2 | Simple CNN single-box regression | Why naive regression fails | Ananth |
 | 3 | Faster R-CNN ResNet50-FPN, all classes | Two-stage | Claude |
 | 4 | RetinaNet | One-stage, non-YOLO | Claude |
-| 5 | YOLOv5s | Original model | Claude |
-| 6 | YOLOv8s, YOLO11s | Modern YOLO | Claude |
+| 5 | YOLOv5s (original yolov5 repo) | Original model; RF100 baseline | Claude |
+| 6 | YOLOv8s, YOLO11s, YOLO26s | Modern YOLO generations at equal size | Claude |
+| 7 | n / s / m of the best family | Speed-accuracy curve, pick deployment model | Claude |
 
-All at 640 px; models 3–6 COCO-pretrained; fixed epoch budget per model documented in its
-config. Preprocessing ablation (none / Gaussian blur / CLAHE) on YOLO11s and Faster R-CNN.
+All at 640 px; models 3–7 COCO-pretrained. YOLO budget (configs/train/yolo.yaml): 100 epochs,
+no early stopping, batch 32, seed 0, Ultralytics defaults; scored at conf 0.001, NMS IoU 0.6,
+max 300 detections. Skipped: v9/v10/v12 (little added to the story; v12 attention is slow on
+T4) and Ultralytics' YOLOv5su (not the original v5). Preprocessing ablation (none / Gaussian blur / CLAHE) on YOLO11s and Faster R-CNN.
 
 Outputs: results table, speed-vs-accuracy scatter, per-class AP charts, written analysis.
 

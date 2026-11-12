@@ -1,0 +1,33 @@
+# Shared YOLO training budget. Every YOLO model in the benchmark uses these settings, so
+# differences come from the architecture, not the recipe. Ultralytics defaults otherwise.
+train:
+  imgsz: 640
+  epochs: 100
+  patience: 100     # no early stopping: fixed budget for every model
+  batch: 32         # total across GPUs (2x T4 -> 16 per GPU)
+  seed: 0
+  deterministic: true
+  workers: 4
+  plots: true
+
+# Pretrained COCO weights per model (downloaded by Ultralytics on first use).
+models:
+  yolov8s: yolov8s.pt
+  yolo11n: yolo11n.pt
+  yolo11s: yolo11s.pt
+  yolo11m: yolo11m.pt
+  yolo26n: yolo26n.pt
+  yolo26s: yolo26s.pt
+  yolo26m: yolo26m.pt
+
+# YOLOv5 is trained with the original ultralytics/yolov5 repo (scripts/train_yolov5.py),
+# not the Ultralytics package, to match the original notebooks and the RF100 baseline.
+yolov5:
+  repo: https://github.com/ultralytics/yolov5.git
+  weights: yolov5s.pt
+
+# Settings used when scoring every model (scripts/evaluate.py --opt ...).
+eval:
+  conf: 0.001
+  iou: 0.6
+  max_det: 300
